@@ -1,0 +1,32 @@
+The file FA.txt should be written:
+
+First line: set of states
+{
+    digit := "0" | "1" |...| "9"
+    letter := "a" | "b" |...| "z"
+
+    state := letter {letter|digit}
+    states := state{state}
+}
+
+Second line: value of state (i-initialState,f-finalState,o-state)
+{
+    value_of_state := "i" | "f" | "n"
+    initialState := state
+    finalStates := state {state}
+}
+
+Third line: number of transitions
+{
+    nonzero_digit := "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+    nr := nonzero_digit {digit}
+}
+
+Next nr lines: transitions (transition= (state,state,character of the alphabet)
+{
+    special_symbol := "+" | "-" | "/" | "*" | "<" | ">" | "<>"
+    alphabet := {letter | digit | special_symbol
+
+    transition := state state {letter | digit |special_symbol}
+    transitions := transition{transition}
+}
